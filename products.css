@@ -1,0 +1,136 @@
+body {
+  background-image: url("images/bg-end.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(84, 18, 18, 1) !important;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wands {
+  font-family: "Inria serif", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.wands p {
+  font-size: 15px;
+  padding-left: 240px;
+  padding-right: 240px;
+}
+
+.options {
+  background-color: rgba(75, 78, 83, 0.5);
+  padding: 35px 20px 60px 20px;
+  font-family: "Inria sans", sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.options a {
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.options a:hover {
+  color: #C5A600;
+}
+
+.options hr {
+  color: white;
+  width: 250px;
+}
+
+.custom-navbar {
+  background-color: #541212;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 70px;
+  padding: 10px 20px;
+}
+
+.logo-img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.search-bar input[type="search"] {
+  min-width: 250px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.grid-container {
+  width: 1000px;
+  margin: auto;
+}
+
+.grid-item {
+  background-color: rgba(255, 245, 233, 0.5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  height: 150px;
+}
+
+.grid-item p {
+  font-family: "Inika", sans-serif;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.prod {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-set {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+  width: 1000px;
+  margin: auto;
+}
+
+.grid-set.active {
+  display: grid;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;  /* centers the slidebar */
+  align-items: center;
+  gap: 10px; /* space between buttons */
+  margin-top: 70px; /* space above the slidebar */
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  background-color: #541212;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover,
+.pagination button.active {
+  background-color: #C5A600;
+  color: black;
+}

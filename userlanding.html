@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Landing Page</title>
+    <style>
+        .container {
+            width: 350px;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .form {
+            display: none;
+        }
+        .form.active {
+            display: block;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #343a40;
+        }
+        input[type=text], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 8px 10px;
+            margin: 8px 0 12px 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        label {
+            display: block;
+            margin-bottom: 12px;
+            color: #555;
+        }
+        label input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="form active" id="login-form">
+            <form id="loginForm" action="login.php" method="POST" onsubmit="return validateLogin()">
+                <h2>Login Your Account</h2>
+                <input type="text" id="login-email" name="email" placeholder="Email" required />
+                <input type="password" id="login-password" name="password" placeholder="Password" required />
+                <label>
+                    <input type="checkbox" name="remember"> Remember Me
+                </label>
+                <button type="submit">Login</button>
+                <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="#" onclick="showSignupForm()">Create Account</a></p>
+            </form>
+        </div>
+
+        
+        <div class="form" id="signup-form">
+            <form action="signup.php" method="POST" onsubmit="return redirectToLogin()">
+                <h2>Create an Account</h2>
+                <input type="text" name="fullname" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <input type="password" name="confirm" placeholder="Confirm Password" required />
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            </form>
+        </div>
+
+        
+        <div class="form" id="forgot-password-form" style="display: none;">
+            <h2>Forgot Password</h2>
+            <input type="email" id="forgot-email" placeholder="Enter Email Address" />
+            <button type="button" onclick="sendVerificationCode()">Send Code</button>
+            <div id="verification-code-section" style="display: none;">
+                <input type="text" id="verification-code" placeholder="Enter Verification Code" />
+                <button type="button" onclick="showResetPassword()">Verify Code</button>
+            </div>
+        </div>
+
+        
+        <div class="form" id="reset-password-form" style="display: none;">
+            <h2>Reset Password</h2>
+            <input type="password" placeholder="New Password" />
+            <input type="password" placeholder="Confirm Password" />
+            <button type="button">Confirm</button>
+            <p><a href="#" onclick="showForgotPassword()">Back to Forgot Password</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showForgotPassword() {
+            hideAllForms();
+            document.getElementById("forgot-password-form").style.display = "block";
+        }
+
+        function showSignupForm() {
+            hideAllForms();
+            document.getElementById("signup-form").style.display = "block";
+        }
+
+        function showLoginForm() {
+            hideAllForms();
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        function hideAllForms() {
+            const forms = document.querySelectorAll(".form");
+            forms.forEach(form => (form.style.display = "none"));
+        }
+
+        function sendVerificationCode() {
+            document.getElementById("verification-code-section").style.display = "block";
+        }
+
+        function showResetPassword() {
+            hideAllForms();
+            document.getElementById("reset-password-form").style.display = "block";
+        }
+
+        function validateLogin() {
+            const email = document.getElementById("login-email").value.trim();
+            const password = document.getElementById("login-password").value.trim();
+
+            if (!email) {
+                alert("Please input email.");
+                return false;
+            }
+            if (!password) {
+                alert("Please input password.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function redirectToLogin() {
+            alert("Account created successfully! Redirecting to login page...");
+            showLoginForm();
+            return false; 
+        }
+    </script>
+</body>
+</html>
+

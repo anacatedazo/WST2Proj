@@ -1,0 +1,131 @@
+/* ALL */
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body::before {
+    content: "";
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.sidebar {
+    top: 0;
+    height: 100vh;
+    background-color: #0b1a2a;
+    padding-top: 20px;
+    position: sticky;
+}
+.sidebar a {
+    color: white;
+    margin: 5px;
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+}
+.sidebar a:hover{
+    background-color: #adb5bd;
+    opacity: 40%;
+}
+.sidebar .active {
+    background-color: #adb5bd;
+    color: #000;
+}
+.dashboard-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    color: white;
+    transition: transform 0.2s ease;
+}
+.dashboard-box:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.dashboard-box img,
+.dashboard-box i {
+    height: 50px;
+    margin-bottom: 15px;
+}
+.welcome {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.top-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* PRODUCTS */
+.content {
+    padding: 40px;
+}
+.table-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 30px;
+    color: black;
+}
+.table img {
+    height: 60px;
+}
+.btn:hover {
+    background-color: #ccc;
+}
+
+/* TRANSACTIONS */
+.table tbody tr.fw-bold {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    border-radius: 20px;
+    border: none;
+    padding: 8px 20px;
+    width: 100%;
+    padding-right: 2.5rem;
+}
+.search-wrapper {
+    position: relative;
+    width: 100vh;
+}
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    cursor: pointer;
+    background-color: #0b1a2a; 
+    border-radius: 50%;
+    padding: 6px; 
+    font-size: 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}

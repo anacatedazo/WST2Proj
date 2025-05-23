@@ -1,0 +1,47 @@
+body{
+    background-image: url("Images/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(84, 18, 18, 100);
+    font-family: "Inter", sans-serif;
+}
+
+.back{
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn{
+    background-color: #541212;
+    border-radius: 0%;
+    border: none;
+}
+
+.box{
+    border-radius: 0%;
+    width: 400px;
+    background-color: #541212;
+    border: none;
+    margin-bottom: 100px;
+}
+
+.for{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Forgot{
+    background-color: rgba(255,245,233,.5);
+    border-radius: 0%;
+}
+
+.Email{
+    color: rgb(33, 37, 41);
+    font-weight: bold;
+    font-size: 15px;
+}
